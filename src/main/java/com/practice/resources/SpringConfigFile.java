@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+import com.practice.model.Item;
+
 @Configuration
 public class SpringConfigFile {
 	
@@ -27,5 +29,16 @@ public class SpringConfigFile {
 		jdbc.setDataSource(dataSource());
 		
 		return jdbc;
+	}
+	
+	@Bean
+	public Item itemObj() {
+		
+		Item it = new Item();
+		it.setId(104);
+		it.setName("Shirt");
+		it.setPrice(350);
+		
+		return it;
 	}
 }
